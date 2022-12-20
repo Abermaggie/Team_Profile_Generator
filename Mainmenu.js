@@ -19,7 +19,7 @@ function Mainmenu() {
     .then((answers) => {
         console.log(answers.menuOptions)
         if(answers.menuOptions === "Create Manager Profile") {
-            return mgrPrompt()
+            mgrPrompt()
         } else if (answers.menuOptions === "Create Engineer Profile") {
             egrPrompt()
         } else {

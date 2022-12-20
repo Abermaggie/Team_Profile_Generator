@@ -26,12 +26,24 @@ function mgrPrompt () {
             name: 'mgrNumber',
             message: "What is the manager's office number?",
         }
-    ]
-    // .then((answers) => {
-    //     let empContent = generatePro(answers);
-    //     fs.writeFile('')
-    // })
-)};
+    ])
+    .then((answers) => {
+        let empContent = generatePro(answers);
+        fs.writeFileSync('index.html', empContent, (err) => 
+        err? console.log(err) : console.log('Successfully created File!'));
+    })
+};
+
+let generatePro = ({mgrName, mgrId, mgrEmail, mgrNumber}) =>
+`${mgrName}, ${mgrId}, ${mgrEmail}, ${mgrNumber}`;
+//     .then((answers) => {{
+//         let empContent = generatePro(answers);
+//         fs.readFile('TestFile.txt', function (err, data) {
+//                     if (err) throw err;
+//     })
+// }
+// )};}
+
 
 
 // mgrPrompt();
