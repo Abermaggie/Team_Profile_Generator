@@ -1,0 +1,29 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "Team Profile Generator for Business Use",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "Test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abermaggie/Team_Profile_Generator.git"
+  },
+  "keywords": [
+    "Team"
+  ],
+  "author": "Maggie Abernathy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abermaggie/Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/Abermaggie/Team_Profile_Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
