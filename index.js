@@ -1,43 +1,35 @@
-const { default: inquirer } = require('inquirer');
+const inquirer = require('inquirer');
+const Mainmenu = require('./Mainmenu');
+const Manager = require('./Manager');
 
-function mainMenu() {
-    console.log("Welcome!  Start building your team!")
-    inquirer.prompt ([
-        {
-            type: 'list',
-            name: 'menuOptions',
-            message: "Please choose from the following options to start building your team:",
-            choices: ['Create Manager Profile', 'Create Engineer Profile', 'Create Intern Profile'],
-        }
-    ])
-    }
 
-function mgrPrompt () {
-    console.log("Please enter your manager information");
-    inquirer 
-    .prompt ([
-        {
-            type: 'input',
-            name: 'mgrName',
-            message: "What is the team manager's name?",
-        },
-        {
-            type: 'input',
-            name: 'mgrId',
-            message: "What is the manager's ID?",
-        },
-        {
-            type: 'input',
-            name: 'mgrEmail',
-            message: "What is the manager's email address?",
-        },
-        {
-            type: 'number',
-            name: 'mgrNumber',
-            message: "What is the manager's office number?",
-        }
-    ])
-}
+
+// function mgrPrompt () {
+//     console.log("Please enter your manager information");
+//     inquirer 
+//     .prompt ([
+//         {
+//             type: 'input',
+//             name: 'mgrName',
+//             message: "What is the team manager's name?",
+//         },
+//         {
+//             type: 'input',
+//             name: 'mgrId',
+//             message: "What is the manager's ID?",
+//         },
+//         {
+//             type: 'input',
+//             name: 'mgrEmail',
+//             message: "What is the manager's email address?",
+//         },
+//         {
+//             type: 'number',
+//             name: 'mgrNumber',
+//             message: "What is the manager's office number?",
+//         }
+//     ])
+// }
 
 function egrPrompt () {
     console.log("Please enter Engineer's information.");
@@ -88,5 +80,8 @@ function intPrompt() {
             name: 'intSchool',
             message: "What school is this intern from?",
         }
-    ])
-}
+    ]);
+};
+// module.exports = index;
+Mainmenu();
+Manager();
