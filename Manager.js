@@ -1,7 +1,9 @@
 const inquirer = require('inquirer');
+const Mainmenu = require('./Mainmenu');
+const fs = require('fs');
 
 function mgrPrompt () {
-    console.log("Please enter your manager information");
+    console.log("Please enter your manager information")
     inquirer 
     .prompt ([
         {
@@ -25,6 +27,13 @@ function mgrPrompt () {
             message: "What is the manager's office number?",
         }
     ]
+    // .then((answers) => {
+    //     let empContent = generatePro(answers);
+    //     fs.writeFile('')
+    // })
 )};
 
-module.exports = Manager;
+
+// mgrPrompt();
+
+module.exports = mgrPrompt;

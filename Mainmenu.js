@@ -1,4 +1,7 @@
 const inquirer = require('inquirer');
+const mgrPrompt = require('./Manager');
+const egrPrompt = require('./Engineer');
+const intPrompt = require('./intern');
 // const index = require('./index');
 
 function Mainmenu() {
@@ -16,7 +19,7 @@ function Mainmenu() {
     .then((answers) => {
         console.log(answers.menuOptions)
         if(answers.menuOptions === "Create Manager Profile") {
-            mgrPrompt()
+            return mgrPrompt()
         } else if (answers.menuOptions === "Create Engineer Profile") {
             egrPrompt()
         } else {
