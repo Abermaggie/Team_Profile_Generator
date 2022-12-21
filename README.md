@@ -28,13 +28,24 @@ Initial package installs can be accomplished with "npm i".  This will download t
 2. Jest- Used to test that all the functionality in the program is working.
 
 ## Usage
-Caption 1: Screen shot of repository framework.
+Caption 1: Screen shot of repository framework- Before program usage.
+![image](https://user-images.githubusercontent.com/114010430/209001995-f8464dd1-42c9-4d1f-8b9c-4f1237af5045.png)
+
+
+Caption 2: Screen shot of repository framework- After program usage.
+![image](https://user-images.githubusercontent.com/114010430/209001831-56780454-b48f-4aad-99d1-7b2b578009ef.png)
+
 
 Caption 2: Screen shot of JSON package with dependencies.
 
 Video 1: Completing the prompts as a user and opening the HTML for view.
+https://drive.google.com/file/d/1GM37ZJxrl1epV_LyurK_h4QxrSQnJ2hV/view
 
 Video 2: Intiating testing.
+https://drive.google.com/file/d/1E_ZAwBUfOD6CiwQtoLDhPv04A-_BWt6C/view
+
+Video 3: Using reset feature to create a new team.
+https://drive.google.com/file/d/1lunaK17m2EHQyFC7CjqTdK5EuOEgguU8/view
 
 ## Credits
 Individual Collaborators:
