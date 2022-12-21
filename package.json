@@ -5,10 +5,12 @@
   "main": "index.js",
   "directories": {
     "lib": "lib",
-    "test": "tests"
+    "test": "test"
   },
   "scripts": {
-    "test": "Test"
+    "test": "jest --verbose test/*",
+    "start": "node index.js",
+    "reset": "node reset.js"
   },
   "repository": {
     "type": "git",

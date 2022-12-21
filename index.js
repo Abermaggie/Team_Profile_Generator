@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // create directory path//
-const Dist_Dir = path.resolve(_dirname, 'dist');
+const DIST_DIR = path.resolve(__dirname, 'dist');
 const distPath =path.join(DIST_DIR, 'team.html');
 
 //import the generate team functions so they can be used in this file//
@@ -45,7 +45,7 @@ function appMenu() {
             type: 'number',
             name: 'managerOfficeNumber',
             message: "What is the manager's office number?",
-        }
+        },
     ])
     // Write this information to a new constructor function//
     .then((answers) => {
@@ -64,7 +64,6 @@ function appMenu() {
 // Create inquirer prompts for the next series of questions that will
 // take the user to individual employee set up//
 function createTeam() {
-    {
     console.log("Welcome!  Start building your team!")
     inquirer
         .prompt([
@@ -79,10 +78,10 @@ function createTeam() {
     // test this//
     .then((userChoice) => {
         switch (userChoice.memberChoice) {
-            case 'Engineer':
+            case 'Create Engineer Profile':
                 addEngineer();
                 break;
-            case'Intern':
+            case'Create Intern Profile':
                 addIntern();
                 break;
             default:
@@ -164,7 +163,7 @@ function addIntern() {
             answers.internSchool
         );
         teamMembers.push(intern);
-        idArray.push(ansswers.internId);
+        idArray.push(answers.internId);
         createTeam();
     });
 }
@@ -178,6 +177,7 @@ function buildTeam() {
     }
     createManager();
 }
-}
+
+
 // call function//
 appMenu();

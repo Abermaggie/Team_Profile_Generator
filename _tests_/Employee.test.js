@@ -1,30 +1,30 @@
 // Test the Employee constructor function to be sure each process is deployed correctly.//
-const Employee = ("../lib/Employee");
+const Employee = require("../lib/Employee");
 
-it("Can create an example of Employee usage", () => {
+test("Can create an example of Employee usage", () => {
     const e = new Employee();
     expect(typeof(e)).toBe("object");
 });
 
-it("Can render name with Employee.js using arguments passed in", () => {
+test("Can render name with Employee.js using arguments passed in", () => {
     const name = "John";
     const e = new Employee(name);
     expect(e.name).toBe(name);
 });
 
-it("Can render id with Employee.js using arguments passed in", () => {
+test("Can render id with Employee.js using arguments passed in", () => {
     const testValue = 100;
     const e = new Employee("Foo", testValue);
     expect(e.id).toBe(testValue);
 });
 
-it("Can render email via Employee.js using arguments passed in", () => {
+test("Can render email via Employee.js using arguments passed in", () => {
     const testValue = "test@email.com";
     const e = new Employee("Foo", 1, testValue);
     expect(e.getEmail()).toBe(testValue);
 });
 
-it("Can get name from getName() function", () => {
+test("Can get name from getName() function", () => {
     const testValue ="John";
     const e = new Employee(testValue);
     expect(e.getName()).toBe(testValue);
