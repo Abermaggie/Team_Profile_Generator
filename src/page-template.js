@@ -1,7 +1,10 @@
+// creating const to generate the team variable that will be the final input
+// to the HTML file//
 const generateTeam = team => {
 
 
     const generateManager = manager => {
+         // Manager specific HTML structure.  Pulling variable from user answers to the manager prompts//
         return `
         <div class = "card employee-card">
         <div class = "card=header">
@@ -20,6 +23,7 @@ const generateTeam = team => {
     };
 
     const generateEngineer = engineer => {
+        // Engineer specific HTML structure.  Pulling variable from user answers to the engineer prompts//
         return `
         <div class = "card employee-card">
         <div class = "card=header">
@@ -38,6 +42,7 @@ const generateTeam = team => {
     };
 
     const generateIntern = intern => {
+         // Intern specific HTML structure.  Pulling variable from user answers to the intern prompts//
         return `
         <div class = "card employee-card">
         <div class = "card=header">
@@ -54,25 +59,31 @@ const generateTeam = team => {
     </div>`;
     }
 
+    // Push/append information collected above into a final HTML structure setting it up as an array//
     const html= [];
-
+    // Push/append manager imformation and join//
     html.push(team
         .filter(employee => employee.getRole() === "Manager")
         .map(manager => generateManager(manager))
     );
+     // Push/append Engineer imformation and join//
     html.push(team
         .filter(employee => employee.getRole() === "Engineer")
         .map(engineer => generateEngineer(engineer))
         .join("")
     );
+     // Push/append Intern imformation and join//
     html.push(team
         .filter(employee => employee.getRole() === "Intern")
         .map(intern => generateIntern(intern))
         .join("")
     );
+    // join the array into a common array of information under the html
+    // and pushing into generate team function//
     return html.join("");
 }
 
+// Creating an export with the entire object placed into html structure.//
 module.exports = team => {
     return `
     <!DOCTYPE html>

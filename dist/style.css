@@ -1,3 +1,5 @@
+/* Styling implemented in addition to the Bootstrap CSS linkage in html structure */
+
 .team-heading {
     background-color: #e84855;
     color: #ffffff;
@@ -19,7 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 4px v4px 8px rgba(0,0,0,0.7);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.7);
     border:none;
 }
 

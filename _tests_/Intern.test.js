@@ -1,3 +1,4 @@
+// Test the Intern constructor function to be sure each process is deployed correctly.//
 const Intern = require("../lib/Intern");
 
 it("Can render schoool via constructor function", () => {

@@ -1,3 +1,4 @@
+// Test the Engineer constructor function to be sure each process is deployed correctly.//
 const Engineer = require("../lib/Engineer");
 
 it("Can render GitHub account via constructor function", () => {

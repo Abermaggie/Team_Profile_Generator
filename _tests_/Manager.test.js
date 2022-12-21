@@ -1,3 +1,4 @@
+// Test the Manager constructor function to be sure each process is deployed correctly.//
 const Manager = require("../lib/Manager");
 const Employee = require("../lib/Employee");
 

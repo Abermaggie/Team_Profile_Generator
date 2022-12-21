@@ -1,3 +1,4 @@
+// Test the Employee constructor function to be sure each process is deployed correctly.//
 const Employee = ("../lib/Employee");
 
 it("Can create an example of Employee usage", () => {

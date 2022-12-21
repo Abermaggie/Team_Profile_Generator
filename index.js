@@ -3,21 +3,24 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const fs = require('fs');
-const path =require('path');
+const path = require('path');
 
-// function to create HTML structure//
+// create directory path//
 const Dist_Dir = path.resolve(_dirname, 'dist');
 const distPath =path.join(DIST_DIR, 'team.html');
 
+//import the generate team functions so they can be used in this file//
 const render = require('./src/page-template.js');
 
-const TeamMembers = [];
+// create array place holders//
+const teamMembers = [];
 const idArray =[];
 
 console.log(
     '\nWelcome to the team generator! \nUse`npm run reset` to reset the dist/folder\n'
 );
 
+// Create the first menu of prompts asking who the manager is//
 function appMenu() {
     function createManager() {
         console.log('Please build your team');
@@ -44,6 +47,7 @@ function appMenu() {
             message: "What is the manager's office number?",
         }
     ])
+    // Write this information to a new constructor function//
     .then((answers) => {
         const manager = new Manager(
             answers.managerName,
@@ -57,6 +61,8 @@ function appMenu() {
     });
 }
 
+// Create inquirer prompts for the next series of questions that will
+// take the user to individual employee set up//
 function createTeam() {
     {
     console.log("Welcome!  Start building your team!")
@@ -85,6 +91,7 @@ function createTeam() {
     });
 }
 
+// create inquirer prompts to set up an Engineer//
 function addEngineer() {
     console.log("Please enter Engineer's information.");
     inquirer
@@ -123,6 +130,7 @@ function addEngineer() {
     });
 }
 
+// create inqurier prompts to set up an Intern//
 function addIntern() {
     console.log("Please enter intern's information.");
     inquirer
@@ -161,6 +169,7 @@ function addIntern() {
     });
 }
 
+// build team to file path//
 function buildTeam() {
     if(!fs.existsSync(DIST_DIR)) {
         fs.mkdirSync(DIST_DIR);
@@ -170,5 +179,5 @@ function buildTeam() {
     createManager();
 }
 }
-
+// call function//
 appMenu();
