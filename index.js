@@ -1,46 +1,55 @@
 const inquirer = require('inquirer');
-const Mainmenu = require('./Mainmenu');
 const mgrPrompt = require('./Manager');
 const egrPrompt = require('./Engineer');
 const fs = require('fs');
 
 // function to create HTML structure//
-// const path ='./index.html'
 
+function generateHeader() {
+    let headContent = generateInfo();
+    fs.writeFileSync('index.html', headContent, (err) => 
+    err? console.log(err) : console.log('Successfully Created File!'));
+}
 
-// var path ='./index.html'
+let generateInfo = () =>
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./dist/style.css">
+    <title>Team Roster</title>
+</head>
+    <body>
+        <header class="jumboTron">My Team</header>`
+        ;
 
-// function pathConf () {
-// fs.stat(path, (err, stats) => {
-//     if( !err ){
-//          if(stats.isFile()){
-//              console.log(stats.isFile());
-//          }
-   
-//          else if(stats.isDirectory()){
-//              console.log('is directory? ' + stats.isDirectory());
-//          }
-//      }
-//      else
-//          console.log(false); 
-// });
-// }
-// pathConf();
-
-
-
-// let indExist = () = fs.access(path);
-// // function indExist() {
-// //     if(fs.readFile('./index.html', 'utf-8', function (err, data) {
-// //         if(err) {
-// //             return console.log(err);
-// //         } else {
-// //             return console.log("file Exists!");
-// //         }
-// //     }));
-// //     }
-
-// console.log(indExist);
+function Mainmenu() {
+    console.log("Welcome!  Start building your team!")
+    inquirer
+    .prompt([
+        {
+            type: 'list',
+            name: 'menuOptions',
+            message: "Please choose from the following options to start building your team:",
+            choices: ['Create Manager Profile', 'Create Engineer Profile', 'Create Intern Profile'],
+        }
+    ])
+    .then((answers) => {
+        console.log(answers.menuOptions)
+        if(answers.menuOptions === "Create Manager Profile") {
+            mgrPrompt()
+        } else if (answers.menuOptions === "Create Engineer Profile") {
+            egrPrompt()
+        } else {
+            intPrompt();
+            return
+        };
+    }
+    )};
 // Write HTML here.//
 Mainmenu();
+generateHeader();
+
 

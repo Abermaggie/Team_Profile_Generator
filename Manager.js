@@ -1,10 +1,20 @@
 const inquirer = require('inquirer');
-const Mainmenu = require('./Mainmenu');
+const Mainmenu = require('./mainMenu');
 const fs = require('fs');
 const pathConf = require('./Path');
+const Employee = require('./constructor');
+
+class Manager extends Employee {
+    constructor(name, id, email, officenumber) {
+        super(name, id, email);
+        this.officenumber = officenumber;
+    }
+}
+
+module.exports = Manager;
 
 function mgrPrompt () {
-    console.log("Please enter your manager information")
+    console.log("Please enter your manager information"),
     inquirer 
     .prompt ([
         {
@@ -30,16 +40,10 @@ function mgrPrompt () {
     ])
     .then((answers) => {
         var empContent = generatePro(answers);
-        var empAppend = appendPro(answers);
-        if(pathConf() === true) {
-                fs.appendFileSync('index.html', empAppend, (err) => 
+                fs.appendFileSync('index.html', empContent, (err) => 
                 err? console.log(err) : console.log('Successfully created File!'));
-            } else {
-                fs.appendFileSync('index.html', empContent + empAppend, (err) => 
-                err? console.log(err) : console.log('Successfully created File!'))
-            }
         });
-        };
+    }
 
 
 // appendEmp () => {
@@ -57,20 +61,7 @@ function mgrPrompt () {
 //     //     err? console.log(err) : console.log('Successfully created File!'));
 //     // })
 // // var appendInfo = generatePro(answers)
-let generatePro = ({mgrName}) =>
-`<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./dist/style.css">
-    <title>${mgrName}'s Team</title>
-</head>
-<body>
-        <header class="jumboTron">My Team</header>`;
-
-let appendPro = ({mgrName, mgrId, mgrEmail, mgrNumber}) =>
+let generatePro = ({mgrName, mgrId, mgrEmail, mgrNumber}) =>
     `   <div class="teamContainer">
             <div class="infoContainer">
                 <div class="infoBoxes">
@@ -85,10 +76,8 @@ let appendPro = ({mgrName, mgrId, mgrEmail, mgrNumber}) =>
                     </div>
                 </div>
             </div>
-        </div>           
-        <script src=""></script>
-    </body>
-</html>`
+        </div>           `
 ;
-
+    
+// clea
 module.exports = mgrPrompt;
