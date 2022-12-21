@@ -1,53 +1,36 @@
-.jumboTron {
-    display:flex;
-    background-color: rgb(255, 79, 79);
-    justify-content: center;
-    font-weight: bold;
-    color:aliceblue;
-    width: 100%;
-    height:150px;
-    font-size: 43px;
-    font-family: 'Times New Roman', Times, serif;
-    align-items: center;
+.team-heading {
+    background-color: #e84855;
+    color: #ffffff;
 }
 
-.teamContainer {
-    /* border: solid; */
+.team-area {
+    max-width: 1000px;
+    margin: 3em auto;
+    flex-wrap: wrap;
 }
 
-.emTitle{
-    display:flex;
-    width:45%;
-    height: 100px;
-    margin-top: 2%;
-    flex-direction: row;
-    align-content: center;
-    background-color: rgb(74, 74, 245);
-    box-shadow: 10px 10px 5px grey;
+.employee-card {
+    margin: 1em;
+    max-width: 280px;
+    width: 90%;
+    min-height: 22rem;
+    background-color: #007bff;
     color: white;
-    font-family:'Times New Roman', Times, serif;
-    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 4px v4px 8px rgba(0,0,0,0.7);
+    border:none;
 }
 
-
-.infoBoxes {
-    display:flex;
+.card-body {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    background-color: #f6f7f8;
 }
 
-h1 {
-    font-size: 20px;
+.list-group-item {
+    color: #000000;
+    text-decoration: none;
 }
-
-.name,
-.stats {
-    margin-left:3%;
-    margin-top: 2%;
-}
-
-/* .infoContainer {
-    width: 30%;
-    border-style:solid;
-} */
-
-
