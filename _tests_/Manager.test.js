@@ -1,19 +1,20 @@
-const axios = require("axios");
-const index = require('../index');
+const Manager = require("../lib/Manager");
+const Employee = require("../lib/Employee");
 
-jest.mock("axios");
+it("Can render the office number via constructor argument", () => {
+    const testValue = 100;
+    const e = new Manager("Foo", 1, "test@email.com", testValue);
+    expect(e.officeNumber).toBe(testValue);
+});
 
-describe('Mainmenu', () => {
-    describe('recPrompt', () => {
-        it("should receive the different choices and return corresponding function", () => {
-            const input = new Mainmenu().then(answers);
-            console.log(input.answers);
-            // const result = mgrPrompt()
-            // const mock = jest.spyOn(console, "log");
-            // mock.mockImplementation(() => {});
+it("getRole() should return \"Manager\"", () => {
+    const testValue = "Manager";
+    const e = new Manager("Foo", 1, "test@email.com", 100);
+    expect(e.getRole()).toBe(testValue);
+});
 
-            // log.return(input);
-            // expect(mock).toEqual(result);
-        })
-    })
-    })
+it("Can get office number via getOffice()", () => {
+    const testValue = 100;
+    const e = new Manager("Foo", 1, "test@email.com", testValue);
+    expect(e.getOfficeNumber()).toBe(testValue);
+});
